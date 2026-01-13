@@ -16,11 +16,18 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/health", (req, res) => {
+    res.status(200).json({
+        status: "ok",
+        service: "service-b"
+    });
+});
+
 app.use(({ res }) => {
     return res.status(404).json({
         service: "service-a",
         message: "Nothing found here",
-        status: "ko"        
+        status: "ko"
     })
 })
 

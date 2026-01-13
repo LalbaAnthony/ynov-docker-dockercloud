@@ -23,8 +23,20 @@ docker compose up
 
 ### Ports binding
 
-| Name            | Type  | Port | Description      | Internal URL          | URL                          |
-| --------------- | ----- | ---- | ---------------- | --------------------- | ---------------------------- | 
-| Service A       | back  | 3001 | Express backend  | http://localhost:3001 | http://localhost:8080/api/a/ |
-| Service B       | back  | 3002 | Express backend  | http://localhost:3002 | http://localhost:8080/api/b/ |
-| Service C       | front | 5173 | Vue.js frontend  | http://localhost:5173 | //                           |
+| Name            | Type            | Port | Description      | Internal URL          | URL                          |
+| --------------- | --------------- | ---- | ---------------- | --------------------- | ---------------------------- | 
+| Service A       | back            | 3001 | Express backend  | http://localhost:3001 | http://localhost:8080/api/a/ |
+| Service B       | back            | 3002 | Express backend  | http://localhost:3002 | http://localhost:8080/api/b/ |
+| Service C       | front           | 5173 | Vue.js frontend  | http://localhost:5173 | //                           |
+
+### RAM and CPUs limitations
+
+Backend services are caped to `1Go` of RAM and `1 CPU`.
+Frontend service is caped to `512Mo` of RAM and `0.5 CPU`. Since VueJS wors in SPA, most of the load is on the client side.
+
+### Healthchecks
+
+An healthcheck is performed on both backend services.
+The healthcheck's port is hardcoded since `PORT` is not available at build time.
+Docker healthchecks are static by design.
+Environment substitution does not happen here.
