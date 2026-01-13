@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LalbaAnthony/ynov-docker-rendu-final.git"
+    "url": "git+https://github.com/LalbaAnthony/ynov-docker-dockercloud.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/LalbaAnthony/ynov-docker-rendu-final/issues"
+    "url": "https://github.com/LalbaAnthony/ynov-docker-dockercloud/issues"
   },
-  "homepage": "https://github.com/LalbaAnthony/ynov-docker-rendu-final#readme",
+  "homepage": "https://github.com/LalbaAnthony/ynov-docker-dockercloud#readme",
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.2.1"
